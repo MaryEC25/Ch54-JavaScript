@@ -19,8 +19,15 @@
 <body>
     <h1>Ejercicio 02</h1>
     <button onclick="mostrarAlerta()"> Mostrar Alerta </button> 
-    <!--Botones que llaman a las funciones cambiarColorFondo y cambiarTexto--> 
+    <!--Botones que llamen a las funciones cambiarColorFondo y cambiarTexto--> 
     <button onclick="cambiarColorFondo()"> Cambiar de color el fondo </button>
     <button onclick="cambiarTexto()"> Cambiar el texto </button>
+    <!-- Agregar un nuevo tag Script y agregar una función que cambie el background de body a otro color ej. blue. Agregar un botón que llame a esa función para cambiar el color de fondo-->
+     <script>
+        function cambiarColorBackgroundBody(){
+           document.body.style.backgroundColor = "#bf95dc"; 
+        }
+     </script>
+     <button onclick="cambiarColorBackgroundBody()"> Cambiar de color el fondo de body </button>
 </body>
 </html>
