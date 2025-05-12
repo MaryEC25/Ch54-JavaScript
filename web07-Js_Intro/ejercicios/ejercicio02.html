@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web 07-ejercicio02</title>
+    <script>
+        function mostrarAlerta() {
+            alert("¡Hola, mundo!");
+        }
+        function cambiarColorFondo() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+        function cambiarTexto() {
+            document.body.innerHTML = "<h1>¡Texto cambiado!</h1>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 02</h1>
+    <button onclick="mostrarAlerta()"> Mostrar Alerta </button> 
+    <!--Botones que llaman a las funciones cambiarColorFondo y cambiarTexto--> 
+    <button onclick="cambiarColorFondo()"> Cambiar de color el fondo </button>
+    <button onclick="cambiarTexto()"> Cambiar el texto </button>
+</body>
+</html>
