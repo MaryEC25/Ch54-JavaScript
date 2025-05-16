@@ -42,7 +42,73 @@
 
 */
 
+/* 
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18, la función debe
+ retornar el mensaje "Eres mayor de edad".
+ En caso contrario, retornar el mensaje "Eres menor de edad".
+ - Realizar la versión de if-else sin usar el bloque de código {}
+*/
 
+const verificarEdad = edad => {
+  if (edad >= 18) return "Eres mayor de edad";
+  else return "Eres menor de edad";
+}
+const resultado = verificarEdad(19);
+console.log(resultado);
+
+/*
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18 y menor o igual a 30
+                 ( evalur con 18 Y(&&) evaluar con 30        )
+ la función debe retornar el mensaje "Tu luchador es Místico".
+ Si es mayor o igual a 31 el mensaje "Tu luchador es el perro Aguayo".
+ Si es menor a 18 el mensaje "Tu luchador es Penta"
+*/
+
+const valorEdad = edad => {
+  if (edad >= 18 && edad <= 30) return "Tu luchador es Místico";
+  else if (edad >= 31) return "Tu luchador es El Santo";
+  else return "Tu luchador es Penta";
+}
+
+const imprimir = valorEdad(25);
+console.log(imprimir);
+
+//Bloque de codigo
+
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar); // 30,40,50
+    
+    {
+        let myVarLet = 100;
+        const myVarConst = 110;
+        var myVarVar = 120;
+        console.log(myVarLet, myVarConst, myVarVar); // 100,110,120
+    }
+    console.log(myVarLet, myVarConst, myVarVar);// 30,40,120
+}
+
+// Ejercicios mentales
+let active = false
+if( active === true ); {
+  console.log("Está activo")
+}
+console.log("Fin del programa");
+// --------------Ejercicio 2-----------------
+active = false;
+if( active )
+  console.log("Está activo");
+  console.log("Tiene autorización");
+console.log("Fin del programa");
+// --------------Ejercicio 3-----------------
+active = false;
+if( active ); console.log("Está activo");
+//else console.log("No está activo"); // Unexpected token 'else'
+// console.log("Fin del programa");
 
 
 //--------------- Condicional Switch --------------------------
@@ -73,7 +139,32 @@
 
 */
 
-
+const evaluarNombre = ( nombre ) => {
+    let resultado;
+    switch ( nombre){
+        case "Lua":
+            resultado = "Es de Abril";
+            break;
+        case "Borrego": 
+        case "Besito":
+        case "Fijól":
+        case "Paco":
+            resultado = "Es de Yessica";
+            break;
+        case "Milo":
+            resultado = "Es de Carlos";
+            break
+        case "Cuchara":
+            resultado = "Es de Ricardo";
+            break;
+        default:
+            resultado ="No se sabe de quién es";        
+    }
+    return resultado;
+}
+console.log( evaluarNombre("Lua") ); // Es de Abril
+console.log( evaluarNombre("Milo") ); // Es de Carlos
+console.log( evaluarNombre("Borrego") ); // Es de Jessica
 
 
 /**
@@ -86,7 +177,43 @@
  * Cualquier otro valor: Velocidad desconocida
  * @param {number} velocidad
  * @returns {string} mensaje
+ * 
  */
+
+function estadoVentilador(velocidad) {
+    let mensaje;
+    switch(velocidad) {
+        case 0:
+            mensaje = "Apagado";
+            break;
+        case 1:
+            mensaje = "Baja";
+            break;
+        case 2:
+            mensaje = "Media";
+            break;
+        case 3:
+            mensaje = "Alta";
+            break;
+        default:
+            mensaje = "Velocidad desconocida";
+    }
+    return mensaje;
+}
+console.log(estadoVentilador(3));
+
+
+
+/**
+ *  Función que reciba la edad de una persona y devuelva el mensaje:
+ *  Si la edad es mayor o igual a 18 años: Eres mayor de edad
+ *  En caso contraio: Eres menor de edad
+ *  @param {number} edad
+ *  @returns {string} mensaje
+ */
+
+
+
 
 
 
@@ -102,15 +229,90 @@
 */
 
 
+const verficarPagoDeTarjeta = ( estaPagado ) =>{
+    let msj;
+    if( estaPagado) {
+        msj = "La tarjta ha sido pagada";
+    } else {
+        msj = "La tarjeta no ha sido pagada";
+    }
+    return msj;
+}
+console.log( verficarPagoDeTarjeta( true ) ); //"La tarjta ha sido pagada"
+console.log( verficarPagoDeTarjeta( false ) ); //"La tarjeta no ha sido pagada"
+
+//Version con operador ternario
+
+const verficarPagoDeTarjetaUsandoTernario = ( estaPagado ) =>{
+    return estaPagado ? "La tarjeta ha sido pagada" : "La tarjeta no ha sido pagada";
+}
+console.log( verficarPagoDeTarjetaUsandoTernario( true ) ); // "La tarjta ha sido pagada"
+console.log( verficarPagoDeTarjetaUsandoTernario( false ) ); // "La tarjeta no ha sido pagada"
 
 
-/**
- *  Función que reciba la edad de una persona y devuelva el mensaje:
- *  Si la edad es mayor o igual a 18 años: Eres mayor de edad
- *  En caso contraio: Eres menor de edad
- *  @param {number} edad
- *  @returns {string} mensaje
- */
+/*
+ Dado un número entero, imprimir:
+ "Negativo":  si el número es menor a 0.
+ "Cero":  si el número es  0.
+ "Positivo":  si el número es mayor a cero pero menor a 100.
+ "Grande": si el número es mayor o igual a 100.
+ - Realizar una función que reciba el número y retorne el mensaje.
+ - El retorno debe ser impreso en la consola.
+ - Realizar una versión if-else, switch y operador ternario.
+*/
+
+//Version if-else
+
+const clasificarNumeroIfElse = numero => {
+  if (numero < 0) return "Negativo";
+  else if (numero === 0)  return "Cero";
+  else if (numero > 0 && numero < 100) return "Positivo";
+  else return "Grande";
+}
+
+console.log(clasificarNumeroIfElse(-5));    // Negativo
+console.log(clasificarNumeroIfElse(0));     // Cero
+console.log(clasificarNumeroIfElse(50));    // Positivo
+console.log(clasificarNumeroIfElse(100));   // Grande
+
+//Version switch
+
+const clasificarNumeroSwitch = (numero) => {
+    let mensaje;
+    switch (true) {
+        case (numero < 0):
+            mensaje = "Negativo";
+            break;
+        case (numero === 0):
+            mensaje = "Cero";
+            break;
+        case (numero > 0 && numero < 100):
+            mensaje = "Positivo";
+            break;
+    default:
+        mensaje = "Grande";
+  }
+  return mensaje;
+}
+
+console.log(clasificarNumeroSwitch(-3));    // Negativo
+console.log(clasificarNumeroSwitch(0));     // Cero
+console.log(clasificarNumeroSwitch(75));    // Positivo
+console.log(clasificarNumeroSwitch(150));   // Grande
+
+//Version operador ternario
+
+const clasificarNumeroTernario = (numero) => {
+    return numero < 0 ? "Negativo" 
+        : numero === 0 ? "Cero" 
+        : numero > 0 && numero < 100 ? "Positivo" 
+        : "Grande";
+}
+
+console.log(clasificarNumeroTernario(-1));   // Negativo
+console.log(clasificarNumeroTernario(0));    // Cero
+console.log(clasificarNumeroTernario(99));   // Positivo
+console.log(clasificarNumeroTernario(100));  // Grande*/
 
 
 
