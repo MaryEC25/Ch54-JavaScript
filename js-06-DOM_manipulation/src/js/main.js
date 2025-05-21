@@ -35,11 +35,26 @@ const changeElementById = () =>{
     console.log( descripcionOperadores );
     // descripcionOperadores.innerText = "document: representa cualquier página web carga en el navegador.";
     //descripcionOperadores.innerText = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
-    //descripcionOperadores.innerHTML = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
+    //descripcionOperadores.textContent = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
     descripcionOperadores.innerHTML = '<span class="text-warning">document</span>: representa cualquier página web carga en el navegador.';
 }
 
 changeElementById();
+
+/*
+ Modificar el parragraph de la línea 44 a 49 del html
+ Mostrar una tarjeta de bootstrao con el titulo "<Mi nombre>"
+ - Crear una nueva función que inserte la tarjeta.
+ - Invotar la función para que se ejecute.
+*/
+
+const changeParagraphById = () =>{
+    const personalCard = document.getElementById("card-insert");
+    console.log(personalCard);
+    personalCard.innerHTML = '<div class="card" style="width: 18rem;"> <img src="..." class="card-img-top" alt="..."> <div class="card-body"> <h5 class="card-title">Mariana</h5>  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p><a href="#" class="btn btn-primary">Go somewhere</a> </div> </div>';
+}
+changeParagraphById();
+
 
 /**
  * Modificar elementos por su tag(etiqueta HTML)
@@ -53,8 +68,21 @@ const changeElementsByTagName =  () => {
    }
 
 }
-
 // changeElementsByTagName();
+
+/*
+Realizar una funcion que lea todos los botones de la pagina y muestre en consola el numero total de botones
+*/
+
+const getPageButtons = () => {
+    const listButtons = document.getElementsByTagName("button");
+    console.log(listButtons.length);
+    
+};
+getPageButtons()
+
+
+
 
 /**
  * Acceder a un elemento usando el selector universar

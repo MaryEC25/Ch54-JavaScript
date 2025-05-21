@@ -16,6 +16,9 @@ const insertHeader = ()=>{
             <li class="nav-item">
               <a class="nav-link active" href="/index.html">Inicio</a>
             </li>
+             <li class="nav-item">
+              <a class="nav-link" href="/src/pages/playera/mi-playera.html">Mi playera</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Acerca de nosotros</a>
             </li>
@@ -25,8 +28,8 @@ const insertHeader = ()=>{
         </div>
       </div>
     </nav>
-    
-    `;
+    `
+    ;
 }
 
 insertHeader();
